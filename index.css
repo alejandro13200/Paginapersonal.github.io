@@ -1,42 +1,80 @@
- body {
-            font-family: Arial, sans-serif; /* Fuente del texto */
-            margin: 0; /* Elimina el margen por defecto */
-            padding: 0; /* Elimina el padding por defecto */
-            background: #f0f0f0; /* Color de fondo de la página */
-            cursor: grab; /* Cambia el cursor a una mano en todo el body */
-        }
-        header, footer {
-            background: #333; /* Fondo oscuro para encabezado y pie */
-            color: #fff; /* Texto blanco */
-            text-align: center; /* Centra el texto */
-            padding: 20px 0; /* Espaciado arriba y abajo */
-        }
-        nav {
-            background: #444; /* Fondo del menú de navegación */
-            padding: 10px; /* Espaciado interno */
-            text-align: center; /* Centra los enlaces */
-        }
-        nav a {
-            color: #fff; /* Color de los enlaces */
-            margin: 0 20px; /* Espacio entre enlaces */
-            text-decoration: none; /* Sin subrayado */
-            font-weight: bold; /* Texto en negrita */
-            cursor: pointer; /* Cambia el cursor a cruz sobre los enlaces */
-        }
-        .contenido {
-            max-width: 800px; /* Ancho máximo del contenido */
-            margin: 30px auto; /* Centra el contenido y agrega margen arriba/abajo */
-            background: #fff; /* Fondo blanco para el contenido */
-            padding: 30px; /* Espaciado interno */
-            border-radius: 10px; /* Bordes redondeados */
-            box-shadow: 0 0 10px #aaa; /* Sombra alrededor del contenido */
-            cursor: pointer; /* Cambia el cursor a cruz sobre el contenido */
-        }
-        .gif-img {
-            width: 200px; /* Ancho de las imágenes GIF */
-            margin: 10px; /* Espacio alrededor de las imágenes */
-            border-radius: 10px; /* Bordes redondeados en las imágenes */
-            box-shadow: 0 0 5px #aaa; /* Sombra alrededor de las imágenes */
-            transition: transform 0.3s; /* Transición suave al hacer hover */
-            cursor: grabbing;  
-        }
+/* Reset general */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f0f0f0;
+    cursor: grab;
+}
+
+/* Encabezado y pie de página */
+header, footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Navegación */
+nav {
+    background: #444;
+    padding: 10px;
+    text-align: center;
+}
+nav a {
+    color: #fff;
+    margin: 0 20px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s, background 0.3s;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+nav a:hover, nav a:focus {
+    color: #333;
+    background: #fff;
+    outline: 2px solid #888;
+}
+
+/* Contenido principal */
+.contenido {
+    max-width: 800px;
+    margin: 30px auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #aaa;
+    cursor: default;
+}
+
+/* Imágenes GIF */
+.gif-img {
+    width: 200px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px #aaa;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+.gif-img:hover {
+    transform: scale(1.08) rotate(-2deg);
+    box-shadow: 0 4px 16px #888;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .contenido {
+        max-width: 95%;
+        padding: 15px;
+    }
+    .gif-img {
+        width: 95%;
+        max-width: 300px;
+        display: block;
+        margin: 15px auto;
+    }
+    nav a {
+        margin: 0 8px;
+    }
+}
